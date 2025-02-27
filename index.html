@@ -11,11 +11,9 @@
 </head>
 <body>
     <div class="container">
-        <div id="evening-prompt" class="card">
-            <h1>Co chceš zítra udělat?</h1>
-            <p class="subtitle">Zadej jednu nejdůležitější věc, kterou chceš zítra dokončit</p>
+        <div id="plan-input" class="card">
             <div class="form-group">
-                <input type="text" id="activity-input" placeholder="Např.: Dokončit prezentaci pro klienta">
+                <input type="text" id="activity-input" placeholder="Zadej hlavní úkol na dnešek">
                 <button id="save-button">Uložit</button>
             </div>
             <div class="time-display">
@@ -24,16 +22,20 @@
             </div>
         </div>
 
-        <div id="morning-view" class="card hidden">
-            <h1>Tvůj dnešní plán</h1>
-            <p class="subtitle">Pro dnešek sis včera stanovil/a:</p>
+        <div id="current-plan" class="card hidden">
             <div class="plan-display">
                 <p id="todays-activity"></p>
+                <button id="done-button">Hotovo</button>
             </div>
             <div class="time-display">
-                <p id="morning-time"></p>
-                <p id="morning-date"></p>
+                <p id="plan-time"></p>
+                <p id="plan-date"></p>
             </div>
+        </div>
+
+        <div id="completed-tasks" class="card">
+            <h2>Hotové úkoly</h2>
+            <div id="completed-list"></div>
         </div>
     </div>
 
