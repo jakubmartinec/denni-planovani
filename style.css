@@ -38,7 +38,7 @@ body {
     padding: 20px;
     display: flex;
     flex-direction: column;
-    gap: 20px;
+    gap: 40px; /* Zvýšený odstup mezi bloky */
 }
 
 .card {
@@ -120,31 +120,40 @@ button:hover {
     display: none;
 }
 
-#completed-list {
-    text-align: left;
-    margin-top: 15px;
+/* Změny ve stylování hotových úkolů */
+#completed-tasks {
+    background: transparent;
+    box-shadow: none;
+    padding: 0;
 }
 
-.empty-list {
-    color: var(--gray-dark);
+#completed-tasks h2 {
+    display: none; /* Skrytí nadpisu "Hotové úkoly" */
+}
+
+#completed-list {
     text-align: center;
-    font-style: italic;
-    padding: 20px 0;
+    margin-top: 0;
 }
 
 .week-label {
     color: var(--primary-color);
-    font-size: 1.1rem;
+    font-size: 0.9rem;
     font-weight: 600;
-    margin: 20px 0 15px 0;
-    padding-bottom: 8px;
-    border-bottom: 1px solid var(--gray-medium);
+    margin: 10px 0;
+    text-align: center;
+    border-bottom: none;
 }
 
 .completed-item {
-    padding: 8px 0;
+    padding: 5px 0;
     color: var(--dark-color);
-    font-size: 1rem;
+    font-size: 0.9rem;
+    text-align: center;
+}
+
+.week-group {
+    margin-bottom: 30px;
 }
 
 /* Responsive */
