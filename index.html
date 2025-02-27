@@ -11,30 +11,33 @@
 </head>
 <body>
     <div class="container">
-        <div id="plan-input" class="card">
-            <div class="form-group">
-                <input type="text" id="activity-input" placeholder="Zadej hlavní úkol na dnešek">
-                <button id="save-button">Uložit</button>
+        <!-- Hlavní blok s formulářem nebo aktuálním úkolem -->
+        <div class="main-section">
+            <div id="plan-input" class="card">
+                <div class="form-group">
+                    <input type="text" id="activity-input" placeholder="Zadej hlavní úkol na dnešek">
+                    <button id="save-button">Uložit</button>
+                </div>
+                <div class="time-display">
+                    <p id="time"></p>
+                    <p id="date"></p>
+                </div>
             </div>
-            <div class="time-display">
-                <p id="time"></p>
-                <p id="date"></p>
+
+            <div id="current-plan" class="card hidden">
+                <div class="plan-display">
+                    <p id="todays-activity"></p>
+                    <button id="done-button">Hotovo</button>
+                </div>
+                <div class="time-display">
+                    <p id="plan-time"></p>
+                    <p id="plan-date"></p>
+                </div>
             </div>
         </div>
 
-        <div id="current-plan" class="card hidden">
-            <div class="plan-display">
-                <p id="todays-activity"></p>
-                <button id="done-button">Hotovo</button>
-            </div>
-            <div class="time-display">
-                <p id="plan-time"></p>
-                <p id="plan-date"></p>
-            </div>
-        </div>
-
-        <div id="completed-tasks" class="card">
-            <h2>Hotové úkoly</h2>
+        <!-- Blok s hotovými úkoly -->
+        <div id="completed-tasks">
             <div id="completed-list"></div>
         </div>
     </div>
