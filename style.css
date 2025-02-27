@@ -1,11 +1,14 @@
 :root {
-    --primary-color: #4a6fa5;
-    --secondary-color: #166088;
-    --light-color: #e6f2ff;
-    --dark-color: #333;
-    --success-color: #28a745;
-    --evening-bg: linear-gradient(135deg, #2c3e50, #4a6fa5);
-    --morning-bg: linear-gradient(135deg, #ff7e5f, #feb47b);
+    --primary-color: #1a73e8;   /* Čistá modrá */
+    --secondary-color: #0d47a1; /* Tmavší modrá */
+    --light-color: #e8f0fe;     /* Velmi světlá modrá */
+    --dark-color: #202124;      /* Téměř černá */
+    --success-color: #1e88e5;   /* Modrá namísto zelené pro úspěch */
+    --evening-bg: linear-gradient(135deg, #202124, #0d47a1);
+    --morning-bg: linear-gradient(135deg, #e8f0fe, #1a73e8);
+    --gray-light: #f8f9fa;
+    --gray-medium: #dadce0;
+    --gray-dark: #5f6368;
 }
 
 * {
@@ -17,7 +20,7 @@
 body {
     font-family: 'Segoe UI', Tahoma, Geneva, Verdana, sans-serif;
     line-height: 1.6;
-    background-color: #f4f4f4;
+    background-color: var(--gray-light);
     color: var(--dark-color);
     display: flex;
     justify-content: center;
@@ -50,7 +53,7 @@ h1 {
 }
 
 .subtitle {
-    color: #777;
+    color: var(--gray-dark);
     margin-bottom: 25px;
     font-size: 1.1rem;
 }
@@ -62,7 +65,7 @@ h1 {
 input[type="text"] {
     width: 100%;
     padding: 15px;
-    border: 2px solid #ddd;
+    border: 2px solid var(--gray-medium);
     border-radius: 5px;
     font-size: 1rem;
     margin-bottom: 15px;
@@ -91,7 +94,7 @@ button:hover {
 
 .time-display {
     margin-top: 25px;
-    color: #777;
+    color: var(--gray-dark);
     font-size: 0.9rem;
 }
 
@@ -102,7 +105,7 @@ button:hover {
     margin: 25px 0;
     font-size: 1.3rem;
     font-weight: 600;
-    color: var(--secondary-color);
+    color: var(--primary-color);
 }
 
 .hidden {
@@ -115,7 +118,7 @@ button:hover {
 }
 
 .evening-mode .card {
-    background: rgba(255, 255, 255, 0.9);
+    background: rgba(255, 255, 255, 0.95);
 }
 
 /* Morning mode styling */
@@ -124,7 +127,7 @@ button:hover {
 }
 
 .morning-mode .card {
-    background: rgba(255, 255, 255, 0.9);
+    background: rgba(255, 255, 255, 0.95);
 }
 
 /* Responsive */
