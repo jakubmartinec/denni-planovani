@@ -1,3 +1,5 @@
+@import url('https://fonts.googleapis.com/css2?family=Open+Sans:wght@300;400;600;700&display=swap');
+
 :root {
     --primary-color: #1a73e8;   /* Čistá modrá */
     --secondary-color: #0d47a1; /* Tmavší modrá */
@@ -18,7 +20,8 @@
 }
 
 body {
-    font-family: 'Segoe UI', Tahoma, Geneva, Verdana, sans-serif;
+    font-family: 'Open Sans', sans-serif;
+    font-weight: 400;
     line-height: 1.6;
     background-color: var(--gray-light);
     color: var(--dark-color);
@@ -38,8 +41,8 @@ body {
 
 .card {
     background: white;
-    border-radius: 15px;
-    box-shadow: 0 10px 30px rgba(0, 0, 0, 0.1);
+    border-radius: 12px;
+    box-shadow: 0 4px 20px rgba(0, 0, 0, 0.08);
     padding: 30px;
     margin-bottom: 20px;
     text-align: center;
@@ -50,12 +53,15 @@ h1 {
     color: var(--primary-color);
     margin-bottom: 20px;
     font-size: 2rem;
+    font-weight: 600;
+    letter-spacing: -0.5px;
 }
 
 .subtitle {
     color: var(--gray-dark);
     margin-bottom: 25px;
     font-size: 1.1rem;
+    font-weight: 400;
 }
 
 .form-group {
@@ -65,16 +71,18 @@ h1 {
 input[type="text"] {
     width: 100%;
     padding: 15px;
-    border: 2px solid var(--gray-medium);
-    border-radius: 5px;
+    border: 1px solid var(--gray-medium);
+    border-radius: 6px;
     font-size: 1rem;
+    font-family: 'Open Sans', sans-serif;
     margin-bottom: 15px;
-    transition: border 0.3s ease;
+    transition: all 0.3s ease;
 }
 
 input[type="text"]:focus {
     border-color: var(--primary-color);
     outline: none;
+    box-shadow: 0 0 0 2px rgba(26, 115, 232, 0.2);
 }
 
 button {
@@ -82,14 +90,18 @@ button {
     color: white;
     border: none;
     padding: 12px 25px;
-    border-radius: 5px;
+    border-radius: 6px;
     cursor: pointer;
     font-size: 1rem;
-    transition: background 0.3s ease;
+    font-family: 'Open Sans', sans-serif;
+    font-weight: 600;
+    transition: all 0.3s ease;
 }
 
 button:hover {
     background-color: var(--secondary-color);
+    transform: translateY(-1px);
+    box-shadow: 0 2px 5px rgba(0, 0, 0, 0.1);
 }
 
 .time-display {
@@ -106,6 +118,7 @@ button:hover {
     font-size: 1.3rem;
     font-weight: 600;
     color: var(--primary-color);
+    box-shadow: inset 0 0 0 1px rgba(26, 115, 232, 0.1);
 }
 
 .hidden {
@@ -118,7 +131,7 @@ button:hover {
 }
 
 .evening-mode .card {
-    background: rgba(255, 255, 255, 0.95);
+    background: rgba(255, 255, 255, 0.97);
 }
 
 /* Morning mode styling */
@@ -127,7 +140,7 @@ button:hover {
 }
 
 .morning-mode .card {
-    background: rgba(255, 255, 255, 0.95);
+    background: rgba(255, 255, 255, 0.97);
 }
 
 /* Responsive */
@@ -137,7 +150,7 @@ button:hover {
     }
     
     .card {
-        padding: 20px;
+        padding: 25px 20px;
     }
     
     h1 {
