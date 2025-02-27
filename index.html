@@ -13,7 +13,7 @@
     <div class="container">
         <!-- Hlavní blok s formulářem nebo aktuálním úkolem -->
         <div class="main-section">
-            <div id="plan-input" class="card">
+            <div id="plan-input">
                 <div class="search-container">
                     <input type="text" id="activity-input" placeholder="Zadej hlavní úkol na dnešek">
                 </div>
@@ -24,11 +24,9 @@
                 </div>
             </div>
 
-            <div id="current-plan">
-                <div class="plan-display">
-                    <p id="todays-activity"></p>
-                    <button id="done-button">Hotovo</button>
-                </div>
+            <div id="current-plan" class="hidden">
+                <p id="todays-activity" class="plan-display"></p>
+                <button id="done-button">Hotovo</button>
                 <div class="time-display">
                     <p id="plan-time"></p>
                     <p id="plan-date"></p>
