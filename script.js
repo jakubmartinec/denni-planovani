@@ -136,7 +136,7 @@ document.addEventListener('DOMContentLoaded', function() {
         completedList.innerHTML = '';
         
         if (completedTasks.length === 0) {
-            completedList.innerHTML = '<p class="empty-list">Zatím žádné hotové úkoly.</p>';
+            // Nic nevypisovat, dokud není nic hotovo
             return;
         }
         
