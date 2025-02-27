@@ -38,11 +38,6 @@ document.addEventListener('DOMContentLoaded', function() {
         const weekNum = getWeekNumber(date);
         return `${date.getFullYear()}-w${weekNum.toString().padStart(2, '0')}`;
     }
-
-    // Formátování datumu pro zobrazení
-    function formatDate(date) {
-        return date.toLocaleDateString('cs-CZ', { day: 'numeric', month: 'numeric' });
-    }
     
     // Zobrazení nebo skrytí formuláře na základě toho, zda máme dnešní plán
     function updateView() {
@@ -171,20 +166,9 @@ document.addEventListener('DOMContentLoaded', function() {
             weekDiv.appendChild(weekLabel);
             
             weekTasks.forEach(task => {
-                const taskDate = new Date(task.timestamp);
                 const taskEl = document.createElement('div');
                 taskEl.classList.add('completed-item');
-                
-                const dateEl = document.createElement('span');
-                dateEl.classList.add('date-badge');
-                dateEl.textContent = formatDate(taskDate);
-                
-                const textEl = document.createElement('span');
-                textEl.classList.add('completed-text');
-                textEl.textContent = task.task;
-                
-                taskEl.appendChild(dateEl);
-                taskEl.appendChild(textEl);
+                taskEl.textContent = task.task;
                 weekDiv.appendChild(taskEl);
             });
             
