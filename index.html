@@ -1,0 +1,39 @@
+<!DOCTYPE html>
+<html lang="cs">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Denní plánování</title>
+    <link rel="stylesheet" href="style.css">
+</head>
+<body>
+    <div class="container">
+        <div id="evening-prompt" class="card">
+            <h1>Co chceš zítra udělat?</h1>
+            <p class="subtitle">Zadej jednu nejdůležitější věc, kterou chceš zítra dokončit</p>
+            <div class="form-group">
+                <input type="text" id="activity-input" placeholder="Např.: Dokončit prezentaci pro klienta">
+                <button id="save-button">Uložit</button>
+            </div>
+            <div class="time-display">
+                <p id="time"></p>
+                <p id="date"></p>
+            </div>
+        </div>
+
+        <div id="morning-view" class="card hidden">
+            <h1>Tvůj dnešní plán</h1>
+            <p class="subtitle">Pro dnešek sis včera stanovil/a:</p>
+            <div class="plan-display">
+                <p id="todays-activity"></p>
+            </div>
+            <div class="time-display">
+                <p id="morning-time"></p>
+                <p id="morning-date"></p>
+            </div>
+        </div>
+    </div>
+
+    <script src="script.js"></script>
+</body>
+</html>
