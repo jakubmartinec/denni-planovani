@@ -12,15 +12,34 @@ document.addEventListener('DOMContentLoaded', function() {
     const planTimeEl = document.getElementById('plan-time');
     const planDateEl = document.getElementById('plan-date');
     
-    // Aktualizace času a data
+    // Aktualizace data a odpočítávání do 17:00
     function updateDateTime() {
         const now = new Date();
-        const timeString = now.toLocaleTimeString('cs-CZ', { hour: '2-digit', minute: '2-digit' });
         const dateString = now.toLocaleDateString('cs-CZ', { weekday: 'long', day: 'numeric', month: 'long', year: 'numeric' });
         
-        timeEl.textContent = timeString;
+        // Výpočet času zbývajícího do 17:00
+        const target = new Date(now);
+        target.setHours(17, 0, 0, 0);
+        
+        // Pokud je už po 17:00, cílový čas je na následující den
+        if (now >= target) {
+            target.setDate(target.getDate() + 1);
+        }
+        
+        // Výpočet rozdílu v milisekundách
+        const diff = target - now;
+        
+        // Převod na hodiny, minuty a sekundy
+        const hours = Math.floor(diff / (1000 * 60 * 60));
+        const minutes = Math.floor((diff % (1000 * 60 * 60)) / (1000 * 60));
+        const seconds = Math.floor((diff % (1000 * 60)) / 1000);
+        
+        // Formátování výstupu
+        const countdownString = `${hours.toString().padStart(2, '0')}:${minutes.toString().padStart(2, '0')}:${seconds.toString().padStart(2, '0')}`;
+        
+        timeEl.textContent = countdownString;
         dateEl.textContent = dateString;
-        planTimeEl.textContent = timeString;
+        planTimeEl.textContent = countdownString;
         planDateEl.textContent = dateString;
         
         return now;
@@ -189,10 +208,10 @@ document.addEventListener('DOMContentLoaded', function() {
     // Inicializace
     updateView();
     
-    // Aktualizovat čas každou minutu
+    // Aktualizovat odpočítávání každou sekundu
     setInterval(() => {
         updateDateTime();
-    }, 60000);
+    }, 1000);
     
     // Kontrola, zda má být zobrazen formulář nebo aktuální plán
     setInterval(() => {
