@@ -43,7 +43,7 @@ body {
 
 .card {
     background: white;
-    border-radius: 12px;
+    border-radius: 30px;
     box-shadow: 0 4px 20px rgba(0, 0, 0, 0.08);
     padding: 30px;
     text-align: center;
@@ -58,25 +58,39 @@ h2 {
     letter-spacing: -0.5px;
 }
 
-.form-group {
-    margin-bottom: 25px;
+/* Nová implementace vyhledávacího pole */
+.search-container {
+    position: relative;
+    display: flex;
+    align-items: center;
+    margin-bottom: 15px;
+    background-color: white;
+    border-radius: 30px;
+    box-shadow: 0 2px 15px rgba(0, 0, 0, 0.08);
+    padding: 5px 15px;
 }
 
-input[type="text"] {
+.search-icon {
+    color: var(--gray-dark);
+    margin-right: 10px;
+    display: flex;
+    align-items: center;
+}
+
+#activity-input {
     width: 100%;
-    padding: 15px;
-    border: 1px solid var(--gray-medium);
-    border-radius: 6px;
+    padding: 12px 5px;
+    border: none;
+    border-radius: 0;
     font-size: 1rem;
     font-family: 'Open Sans', sans-serif;
-    margin-bottom: 15px;
-    transition: all 0.3s ease;
+    outline: none;
+    background: transparent;
 }
 
-input[type="text"]:focus {
-    border-color: var(--primary-color);
+#activity-input:focus {
     outline: none;
-    box-shadow: 0 0 0 2px rgba(26, 115, 232, 0.2);
+    box-shadow: none;
 }
 
 button {
@@ -90,6 +104,7 @@ button {
     font-family: 'Open Sans', sans-serif;
     font-weight: 600;
     transition: all 0.3s ease;
+    margin-bottom: 20px;
 }
 
 button:hover {
@@ -103,15 +118,9 @@ button:hover {
 }
 
 .time-display {
-    margin-top: 25px;
+    margin-top: 15px;
     color: var(--gray-dark);
     font-size: 0.9rem;
-}
-
-.countdown-label {
-    font-size: 0.8rem;
-    margin-bottom: 5px;
-    color: var(--gray-dark);
 }
 
 #time, #plan-time {
@@ -121,9 +130,16 @@ button:hover {
     margin-bottom: 5px;
 }
 
+/* Upravený current-plan bez pozadí */
+#current-plan {
+    background: transparent;
+    padding: 30px;
+    text-align: center;
+    transition: all 0.3s ease;
+}
+
 .plan-display {
-    padding: 20px;
-    border-radius: 8px;
+    padding: 20px 0;
     font-size: 1.3rem;
     font-weight: 600;
     color: var(--primary-color);
@@ -138,10 +154,6 @@ button:hover {
     background: transparent;
     box-shadow: none;
     padding: 0;
-}
-
-#completed-tasks h2 {
-    display: none; /* Skrytí nadpisu "Hotové úkoly" */
 }
 
 #completed-list {
